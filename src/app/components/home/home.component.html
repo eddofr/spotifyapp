@@ -1,1 +1,13 @@
-<p>home works!</p>
+<h1>Paises : </h1>
+<ul>
+        <li *ngFor="let pais of paises">
+            <div class="row mt-5">
+                <div class="col col-4">{{pais.name.common}}</div>
+                <div class="col col-8"><img [src]="pais.flags.png" alt=""></div>
+            </div>
+            
+            
+            
+        </li>
+    
+</ul>
