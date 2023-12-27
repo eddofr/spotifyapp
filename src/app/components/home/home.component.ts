@@ -6,13 +6,16 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class HomeComponent {
 
+  nuevasCanciones : any[] = [];
+
   constructor( private spotify : SpotifyService){
-    this.spotify.getNewReleases();
-  }
-
-  ngOnInit(): void {
-
+    this.spotify.getNewReleases()
+                .subscribe( (data : any) => {
+                  console.log(data.albums.items);
+                  this.nuevasCanciones = data.albums.items;
+                })
     
   }
 
+  
 }
