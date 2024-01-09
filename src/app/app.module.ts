@@ -10,7 +10,7 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { SpotifyService } from './services/spotify.service';
-import { NoimagePipe } from './pides/noimage.pipe';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 @NgModule({
   declarations: [
