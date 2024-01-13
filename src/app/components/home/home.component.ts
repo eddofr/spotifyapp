@@ -12,7 +12,10 @@ export class HomeComponent {
   constructor( private spotify : SpotifyService){
     this.loading = true;
     this.spotify.getNewReleases()
-                .subscribe( data => this.nuevasCanciones = data);
+                .subscribe( data => {
+                  this.nuevasCanciones = data;
+                  console.log(data);
+                });
                 this.loading = false;
     
   }
