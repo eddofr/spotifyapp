@@ -15,3 +15,29 @@
     <button routerLink="/search" class="btn btn-outline-danger">Regresar</button>
 </div>
 </div>
+
+<div class="row m-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Album</th>
+                <th>Cancion</th>
+                <th>Vista previa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let track of topTracks">
+                <th>
+                    <img [src]="track.album.images | noimage" class="img-thumb">
+                </th>
+                <th>{{track.album.name}}</th>
+                <th>{{track.name}}</th>
+                <th>
+                    <!-- <audio [src]="track.preview_url" controls></audio> -->
+                    <iframe [src]="track.uri | domseguro " width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
